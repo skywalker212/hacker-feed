@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "HackerFeed",
+  "name": "hackerfeed",
   "icons": [
     {
       "src": "favicon.ico",
