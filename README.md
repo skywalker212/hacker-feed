@@ -1,5 +1,7 @@
 # hacker-feed
 
+[![Build Status](https://travis-ci.com/skywalker212/hacker-feed.svg?branch=master)](https://travis-ci.com/skywalker212/hacker-feed)
+
 A side project to develop a pretty HackerNews Feed. check out the live version : [hacker-feed](https://hacker-feed.herokuapp.com/)
 
 ## to check it out
