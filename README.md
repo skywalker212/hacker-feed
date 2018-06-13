@@ -1,2 +1,15 @@
 # hacker-feed
-A side project to develop a pretty HackerNews Feed.
+
+A side project to develop a pretty HackerNews Feed. check out the live version : [hacker-feed](https://hacker-feed.herokuapp.com/)
+
+## to check it out
+
+1. clone this repo using ```git clone```
+2. ```yarn start``` to host it on local server
+3. ```yarn test``` to start testing
+
+## contribute
+
+1. fork this repo
+2. make changes, fix bugs, implement new features
+3. make a pull request
