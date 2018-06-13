@@ -9,16 +9,29 @@ export default class Story extends React.Component{
         }
     }
     componentDidMount(){
+        this._isMounted=true;
         fetch('https://hacker-news.firebaseio.com/v0/item/'+this.props.id+'.json')
         .then(res=>res.json())
         .then(data=>{
-            this.setState((state)=>{
-                return {
-                    state,
-                    ...data
-                }
-            });
+            if(this._isMounted){
+                this.setState((state)=>{
+                    return {
+                        state,
+                        ...data
+                    }
+                });
+            }
+        }).catch(err=>{
+            if(this._isMounted){
+                this.setState({
+                    title: err
+                });
+            }
         });
+    }
+
+    componentWillUnmount(){
+        this._isMounted=false;
     }
 
     changeDisplayState = () =>{

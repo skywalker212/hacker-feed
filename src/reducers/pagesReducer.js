@@ -1,7 +1,8 @@
 const defaultPageState = {
-    page: 0,
-    pages: 0,
-    stories: []
+    page: 1,
+    pages: 1,
+    stories: [],
+    error: false
 };
 
 const pagesReducer = (state=defaultPageState,action)=>{
@@ -14,22 +15,24 @@ const pagesReducer = (state=defaultPageState,action)=>{
         case 'PREV_PAGE':
             return {
                 ...state,
-                page: state.page>0?state.page-1:0
+                page: state.page>1?state.page-1:1
             };
         case 'JUMP_TO_PAGE':
             return {
                 ...state,
                 page: action.page
             };
-        case 'SET_PAGES':
-            return {
-                ...state,
-                pages: action.pages
-            }
         case 'SET_STORIES':
             return {
                 ...state,
-                stories: action.stories
+                stories: action.stories,
+                page: action.page,
+                pages: action.pages
+            }
+        case 'SET_ERROR':
+            return {
+                ...state,
+                error: state.error
             }
         default:
             return state;
