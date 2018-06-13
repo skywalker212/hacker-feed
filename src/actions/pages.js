@@ -10,9 +10,10 @@ export const jumpToPage = (page)=>({
     type:'JUMP_TO_PAGE',
 });
 
-export const setStories = (stories)=>({
+export const setStories = (stories,type)=>({
     type: 'SET_STORIES',
     stories,
+    curr: type,
     page: 1,
     pages: Math.ceil(stories.length/10)
 });

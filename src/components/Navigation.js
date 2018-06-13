@@ -13,23 +13,19 @@ export class Navigation extends React.Component{
     setNew = () => {
         changeStories(this.props.setStories,'new');
     }
-    render(){
-        return (
-            <div>
-                <button onClick={this.setTop}>Top Stories</button>
-                <button onClick={this.setBest}>Best Stories</button>
-                <button onClick={this.setNew}>New Stories</button>
-            </div>
-        );
-    }
+    render= () =>  (<div className="center-align navigation">
+                <button className="waves-effect waves-light btn-small z-depth-3" onClick={this.setTop}>Top Stories</button>
+                <button className="waves-effect waves-light btn-small z-depth-2" onClick={this.setBest}>Best Stories</button>
+                <button className="waves-effect waves-light btn-small z-depth-3" onClick={this.setNew}>New Stories</button>
+            </div>);
 }
 
 const mapStateToProps = (state) => ({
-    //maybe it'll be useful in future
+    curr: state.curr
 });
 
 const mapDispatchToProps = (dispatch)=>({
-    setStories: (stories) => dispatch(setStories(stories))
+    setStories: (stories,type) => dispatch(setStories(stories,type))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Navigation);

@@ -1,0 +1,24 @@
+.App {
+    font-family: 'Roboto Mono',monospace
+}
+
+.navigation button{
+    margin: 10px;
+}
+
+.navigation{
+    margin: 5px 0 15px 0;
+}
+
+.App-desc{
+    margin-bottom: 15px;
+}
+
+.prev-btn, .next-btn{
+    font-weight: bold;
+    margin: 10px 20px;
+}
+
+.story{
+    border-radius: 20px !important;
+}

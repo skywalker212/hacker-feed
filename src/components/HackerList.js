@@ -22,19 +22,20 @@ class HackerList extends React.Component{
             <div>
                 {this.props.error && <p>Please set a value for page</p>}
                 {this.props.stories.length===0 && <p>Please wait...</p>}
+                <h6 className='center-align' style={{margin:'20px 0'}}>{this.props.curr} stories</h6>
                 {this.props.stories && this.filterStories()}
-                {this.props.pages>0 && <div>
+                {this.props.pages>0 && <div className="center-align">
                     <p>Showing page {this.props.page} of {this.props.pages}</p>
-                    <button disabled={this.props.page===1} onClick={this.props.prevPage}>Previous Page</button>
+                    <button className="prev-btn black-text waves-effect waves-light btn-small yellow accent-2" disabled={this.props.page===1} onClick={this.props.prevPage}>Previous Page</button>
                     {/*<input type='text' onChange={this.jumpTo} value={this.props.page} />*/}
-                    <button disabled={this.props.page===this.props.pages} onClick={this.props.nextPage}>NextPage</button>
+                    <button className="next-btn black-text waves-effect waves-light btn-small red accent-2" disabled={this.props.page===this.props.pages} onClick={this.props.nextPage}>NextPage</button>
                 </div>}
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => ({page: state.page,pages: state.pages,stories: state.stories,error: state.error});
+const mapStateToProps = (state) => ({page: state.page,pages: state.pages,stories: state.stories,error: state.error,curr:state.curr});
 const mapDispatchToProps = (dispatch) => ({
     nextPage: () => dispatch(nextPage()),
     prevPage: () => dispatch(prevPage()),

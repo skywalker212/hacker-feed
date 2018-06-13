@@ -2,7 +2,8 @@ const defaultPageState = {
     page: 1,
     pages: 1,
     stories: [],
-    error: false
+    error: false,
+    curr: 'top'
 };
 
 const pagesReducer = (state=defaultPageState,action)=>{
@@ -27,7 +28,8 @@ const pagesReducer = (state=defaultPageState,action)=>{
                 ...state,
                 stories: action.stories,
                 page: action.page,
-                pages: action.pages
+                pages: action.pages,
+                curr: action.curr
             }
         case 'SET_ERROR':
             return {
