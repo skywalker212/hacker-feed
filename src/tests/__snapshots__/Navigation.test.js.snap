@@ -1,18 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Navigation component successfully 1`] = `
-<div>
+<div
+  className="center-align navigation"
+>
   <button
+    className="waves-effect waves-light btn-small z-depth-3"
     onClick={[Function]}
   >
     Top Stories
   </button>
   <button
+    className="waves-effect waves-light btn-small z-depth-2"
     onClick={[Function]}
   >
     Best Stories
   </button>
   <button
+    className="waves-effect waves-light btn-small z-depth-3"
     onClick={[Function]}
   >
     New Stories
