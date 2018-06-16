@@ -1,17 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setStories} from '../actions/pages';
+import {setStories, changeLoading} from '../actions/pages';
 import changeStories from '../actions/changeResults';
 
 export class Navigation extends React.Component{
     setTop = () => {
-        changeStories(this.props.setStories,'top');
+        this.props.changeLoading(true);
+        changeStories(this.props.setStories, this.props.changeLoading,'top');
     }
     setBest = () => {
-        changeStories(this.props.setStories,'best');
+        this.props.changeLoading(true);
+        changeStories(this.props.setStories,this.props.changeLoading,'best');
     }
     setNew = () => {
-        changeStories(this.props.setStories,'new');
+        this.props.changeLoading(true);
+        changeStories(this.props.setStories,this.props.changeLoading,'new');
     }
     render= () =>  (<div className="center-align navigation">
                 <button className="waves-effect waves-light btn-small z-depth-3" onClick={this.setTop}>Top Stories</button>
@@ -25,7 +28,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch)=>({
-    setStories: (stories,type) => dispatch(setStories(stories,type))
+    setStories: (stories,type) => dispatch(setStories(stories,type)),
+    changeLoading: (type) => dispatch(changeLoading(type))
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Navigation);

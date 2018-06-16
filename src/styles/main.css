@@ -22,3 +22,25 @@
 .story{
     border-radius: 20px !important;
 }
+
+.d-inline{
+    display: inline;
+}
+
+.my-btn{
+    margin-left: 10px;
+    border-radius: 10px !important;
+    background: chocolate !important;
+}
+
+.score-text{
+    margin-top: 10px;
+}
+
+.p-text{
+    margin: 10px 15px !important;
+    background: grey !important;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+}

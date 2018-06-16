@@ -22,3 +22,8 @@ export const setError = (err) => ({
     type: 'SET_ERROR',
     error: err
 });
+
+export const changeLoading = (type) => ({
+    type: 'CHANGE_LOADING',
+    loading: type
+});

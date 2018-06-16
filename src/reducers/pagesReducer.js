@@ -3,7 +3,8 @@ const defaultPageState = {
     pages: 1,
     stories: [],
     error: false,
-    curr: 'top'
+    curr: 'top',
+    loading: true
 };
 
 const pagesReducer = (state=defaultPageState,action)=>{
@@ -35,6 +36,11 @@ const pagesReducer = (state=defaultPageState,action)=>{
             return {
                 ...state,
                 error: state.error
+            }
+        case 'CHANGE_LOADING':
+            return {
+                ...state,
+                loading: action.loading
             }
         default:
             return state;

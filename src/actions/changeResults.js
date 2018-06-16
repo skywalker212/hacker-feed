@@ -1,8 +1,9 @@
-const changeStories = (callback,type) => {
+const changeStories = (callback1,callback2,type) => {
     fetch('https://hacker-news.firebaseio.com/v0/' +type +'stories.json')
         .then(result=>result.json())
         .then(data=>{
-            callback(data,type);
+            callback1(data,type);
+            callback2(false);
         });
 }
 
